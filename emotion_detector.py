@@ -41,7 +41,7 @@ y = dataset.iloc[:, -1].values #This gets what emotion of each sentence is
 #Creating machine learning model and fitting it on bag of word model
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, shuffle = False)
 
 from sklearn.neighbors import KNeighborsClassifier    #Create machine learning model that will be used to identify emotion of given sentence                                
 classifier = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
